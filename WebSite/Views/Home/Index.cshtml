@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Usuario>
+@{ Layout = "_Layout"; ViewBag.Title = "Todos Usuários";}
+
+<h2>Todos Usuários</h2>
+
+<a asp-action="AddUsuarios" class="btn btn-sm btn-primary">Criar Usuários</a>
+<!--<a asp-action="GetUsuarios" class="btn btn-sm btn-secondary">Detalhes do Usuário</a>-->
+
+</br>
+</br>
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome Completo</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Data de Nascimento</th>
+            <th>Contribuidor</th>
+            <th>Detalhes</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+
+
+        <tr>
+            <td>@r.Id</td>
+            <td>@r.NomeCompleto</td>
+            <td>@r.Email</td>
+            <td>@r.Senha</td>
+            <td>@r.DataNascimento</td>
+            <td><input id="UsuarioContribuidor" type="checkbox" checked=@r.UsuarioContribuidor style="" onchange="" disabled="disabled" /></td>
+
+            <!--<td><a asp-action="UpdateUsuarios" asp-route-id="@r.Id" class="btn btn-link">Editar</a></td>-->
+
+            <td>
+                <form asp-action="GetUsuarios" method="post">
+                    <input type="hidden" value="@r.Id" name="Id" />
+                    <button type="submit" class="btn btn-link">Detalhes</button>
+
+                </form>
+            </td>
+
+            <!--
+               <td>
+                    <form asp-action="DeleteUsuarios" method="post">
+                        <input type="hidden" value="r.Id" name="Id" />
+                        <button type="submit" class="btn btn-link">Deletar</button>
+                    </form>
+                </td>
+            -->
+        </tr>
+        }
+    </tbody>
+</table>

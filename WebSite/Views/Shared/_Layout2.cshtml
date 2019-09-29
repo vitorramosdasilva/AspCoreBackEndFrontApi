@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link asp-href-include="lib/bootstrap/dist/css/*.min.css" rel="stylesheet" />
+    <script src="~/js/checkedBox.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @RenderSection("Scripts", required: false)
+</head>
+<body>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+</body>
+</html>

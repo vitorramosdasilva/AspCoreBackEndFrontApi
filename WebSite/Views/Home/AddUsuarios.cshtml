@@ -1,0 +1,115 @@
+﻿@model Usuario
+@{ Layout = "_Layout"; ViewBag.Title = "Criar Usuários";}
+
+<style>
+    .field-validation-error {
+        color: red
+    }
+
+    .validation-summary-errors {
+        color: red
+    }
+</style>
+
+<h2 class="text-center">Cadastrar Usuários</h2>
+<br />
+<br />
+
+<div class="container">
+
+    <div class="col-md-4">
+        <!--
+            <a asp-action="Index" class="btn btn-sm btn-primary text-center">
+                Listar Usuários
+            </a>
+         -->
+    </div>
+
+    <div class="col-md-4">
+
+        <form asp-action="AddUsuarios" method="post" id="MyForm">
+
+            <div asp-validation-summary="ModelOnly">
+                <span class="dadosCorretos">Por favor insira os dados corretos!</span>
+            </div>
+
+            <div class="form-group">
+                <label for="NomeCompleto">Nome Completo:</label>
+                <input class="form-control" name="NomeCompleto" />
+                <span asp-validation-for="NomeCompleto"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                <input class="form-control" name="Email" id="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label for="Senha">Senha:</label>
+                <input class="form-control" type="password" name="Senha" id="Senha" />
+                <span asp-validation-for="Senha"></span>
+            </div>
+            <div class="form-group">
+                <label for="DataNascimento">DataNascimento:</label>
+                <input class="form-control" name="DataNascimento" type="date" id="DataNascimento" />
+                <span asp-validation-for="DataNascimento"></span>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label" for="UsuarioContribuidor">Enviar Imagens:</label>
+                <!--<input type="checkbox" name="UsuarioContribuidor" class="form-check-input" id="UsuarioContribuidor" />-->
+                <input type="checkbox" data-val="true" id="UsuarioContribuidor" name="UsuarioContribuidor" value="true">
+                <input name="UsuarioContribuidor" type="hidden" value="false">
+
+
+            </div>
+
+            <div class="text-center panel-body">
+                <button type="submit" class="btn btn-lg btn-primary">Criar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-4">
+
+    </div>
+
+</div>
+
+@if (Model != null && Model.Id > 0)
+{
+    <h2>Usuários</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>Nome Completo</th>
+                <th>Email</th>
+                <th>Senha</th>
+                <th>Data de Nascimento</th>
+                <th>Enviar Imagens</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>@Model.NomeCompleto</td>
+                <td>@Model.Email</td>
+                <td>@Model.Senha</td>
+                <td>@Model.DataNascimento</td>
+                <td><input id="UsuarioContribuidor" type="checkbox" checked=@Model.UsuarioContribuidor disabled="disabled" /></td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+
