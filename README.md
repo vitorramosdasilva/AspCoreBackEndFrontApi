@@ -2,12 +2,10 @@
 
 ## Especificações:
 
-- Back End Aspnet core Web Api Rest
-- Front End AspNet Core Consumindo a Web Api
-- Front End em Html e Boostrap
-- Banco de Dados Mysql utilizando Dapper
+- **Back End** - Aspnet core Web Api Rest
+- **Front End** - AspNet Core Consumindo a Web Api contendo também Html, Boostrap e validações efetuadas na Controller em Modelstate com o Plugin desenvolvido em Jquery Validate.js
+- **Banco de Dados** -  Mysql utilizando Dapper
 - Na pasta DataBase temos um backup do Banco de dados.
-- Front End com validações efetuadas na Controller em Modelstate com o Plugin desenvolvido em Jquery Validate.js
 
 ## Requisitos
 
