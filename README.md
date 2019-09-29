@@ -7,6 +7,7 @@
 - Front End em Html, Css e Boostrap
 - Banco de Dados Mysql utilizando Dapper
 - Na pasta DataBase temos um backup do Banco de dados.
+- Front End com validações efetuadas na Controller em Modelstate com o Plugin desenvolvido em Jquery Validate.js
 
 ## Requisitos
 
