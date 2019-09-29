@@ -1,0 +1,95 @@
+﻿@model Usuario
+@{ Layout = "_Layout"; ViewBag.Title = "Atualizar Contatos";}
+
+<h2>Atualizar Usuarios <a asp-action="Index" class="btn btn-sm btn-secondary">Voltar</a></h2>
+<!--asp-action="UpdateUsuarios"-->
+
+<form asp-action="UpdateUsuarios" method="post" enctype="multipart/form-data" id="myform">
+    
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input class="form-control" asp-for="Id" />
+                <!--readonly-->
+    </div>
+    <div class="form-group">
+        <label asp-for="NomeCompleto">Name Completo:</label>
+        <input class="form-control" asp-for="NomeCompleto" required/>
+       
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input class="form-control" asp-for="Email" id="myform"/>
+        
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Senha">Senha:</label>
+        <input class="form-control" asp-for="Senha" required minlength="5" maxlength="8"/>
+                
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DataNascimento">Data de Nascimento:</label>
+        <input class="form-control" asp-for="DataNascimento" data-validation="date" data-validation-format="yyyy-mm-dd"/>
+        
+    </div>
+
+    <div class="form-group">        
+            <label asp-for="UsuarioContribuidor">Usuario Contribuidor:
+                <input type="checkbox" class="checkbox" asp-for="UsuarioContribuidor" />
+            </label>
+    </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-primary">Atualizar</button>
+        </div>
+</form>
+
+
+@if (ViewBag.Result == "Success")
+{
+    <!--<h2>Usuarios</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>telefoneFixo</th>
+                <th>telefoneResidencial</th>
+                <th>telefoneCelular</th>
+                <th>telefoneCelular2</th>
+                <th>telefoneComercial</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>Model.Id</td>
+                    <td>Model.Nome</td>
+                    <td>Model.Email</td>
+                    <td>Model.telefoneFixo</td>
+                    <td>Model.telefoneResidencial</td>
+                    <td>Model.telefoneCelular</td>
+                    <td>Model.telefoneCelular2</td>
+                    <td>Model.telefoneComercial</td>
+                </tr>
+        </tbody>
+    </table>-->
+    <p>@ViewBag.Result</p>
+
+}
+<script>
+    // just for the demos, avoids form submit
+    jQuery.validator.setDefaults({
+      debug: true,
+      success: "valid"
+    });
+    $( "#myform" ).validate({
+      rules: {
+        field: {
+          required: true,
+          email: true
+        }
+      }
+    });
+</script>

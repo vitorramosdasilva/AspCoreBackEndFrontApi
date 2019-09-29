@@ -1,0 +1,58 @@
+﻿@model Usuario
+@{ Layout = "_Layout"; ViewBag.Title = "Detalhes";}
+
+
+<h2 class="text-center"> Detalhes do Usuário </h2>
+<br />
+
+
+@if (Model != null)
+{
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Nome Completo:</h3>
+                    <h4>@Model.NomeCompleto</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Emal : </h3>
+                    <h4>@Model.Email</h4>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Data de Nascimento : </h3>
+                    <h4>@Model.DataNascimento</h4>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3> Vender Imagens ? </h3>
+                    <h4><input id="myCheck" type="checkbox" checked=@Model.UsuarioContribuidor style="" disabled="disabled" /></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a asp-action="Index" class="btn btn-lg btn-primary">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
