@@ -4,7 +4,7 @@
 
 - **Back End** - Aspnet core Web Api Rest
 - **Front End** - AspNet Core Consumindo a Web Api contendo também Html, Boostrap e validações efetuadas na Controller em Modelstate com o Plugin desenvolvido em Jquery Validate.js
-- **Banco de Dados** -  Mysql utilizando Dapper
+- **Banco de Dados** -  MySQL utilizando Dapper
 - Na pasta DataBase temos um backup do Banco de dados.
 
 ## Requisitos
