@@ -11,13 +11,15 @@ namespace ApiMySql.Model
         [Key]
         public int Id { get; set; }
 
-        
-        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail não é valido")]
+
+        //[RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail não é valido")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$")]
         public string Email { get; set; }
 
 
-        [Required(ErrorMessage = "Senha é requirida")]
-        [StringLength(8, ErrorMessage = "Caracteres quantidade entre 5 a 8", MinimumLength = 5)]
+        //[Required(ErrorMessage = "Senha é requirida")]
+        //[StringLength(8, ErrorMessage = "Caracteres quantidade entre 5 a 8", MinimumLength = 5)]
+        [StringLength(8, MinimumLength = 5)]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
 

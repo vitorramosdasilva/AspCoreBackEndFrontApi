@@ -120,47 +120,7 @@ namespace WebSite.Controllers
                 }
             }
 
-            /*
-            Usuario receivedUsuarios = new Usuario();
-
-            using (var httpClient = new HttpClient())
-            {
-                try{
-                    
-                   
-                    content.Add(new StringContent(usuarios.Id.ToString()), "Id");                    
-                    content.Add(new StringContent(usuarios.Email), "Email");
-                    content.Add(new StringContent(usuarios.Senha), "Senha");
-                    content.Add(new StringContent(usuarios.NomeCompleto), "NomeCompleto");
-                    content.Add(new StringContent(usuarios.DataNascimento), "DataNascimento");
-                    content.Add(new StringContent(usuarios.UsuarioContribuidor.ToString()), "UsuarioContribuidor");     
-
-                }
-                catch(InvalidCastException  ex){
-                    Console.WriteLine($"content: '{ex}'");
-                } 
-
-                  
-                try{
-                    var teste = await httpClient.PutAsync(caminhoApi, content);
-                }catch (InvalidCastException ex) {
-                    Console.WriteLine($"PutAsync: '{ex}'");
-                }
-
-
-                try{
-                    using (var response = await httpClient.PutAsync(caminhoApi, content))
-                {
-
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    ViewBag.Result = "Success";
-                        receivedUsuarios = JsonConvert.DeserializeObject<Usuario>(apiResponse);
-                                           
-                }
-                }catch (InvalidCastException ex) {
-                    Console.WriteLine($"response: '{ex}'");
-                }
-            }*/
+           
             return View(receivedUsuarios);
         }
       
