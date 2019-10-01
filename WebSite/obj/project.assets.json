@@ -12547,11 +12547,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rsvit\\source\\repos\\ApiMysqlProd\\WebSite\\WebSite.csproj",
+      "projectUniqueName": "C:\\Users\\rsvit\\source\\repos\\AspCoreBackEndFrontApi\\WebSite\\WebSite.csproj",
       "projectName": "WebSite",
-      "projectPath": "C:\\Users\\rsvit\\source\\repos\\ApiMysqlProd\\WebSite\\WebSite.csproj",
+      "projectPath": "C:\\Users\\rsvit\\source\\repos\\AspCoreBackEndFrontApi\\WebSite\\WebSite.csproj",
       "packagesPath": "C:\\Users\\rsvit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rsvit\\source\\repos\\ApiMysqlProd\\WebSite\\obj\\",
+      "outputPath": "C:\\Users\\rsvit\\source\\repos\\AspCoreBackEndFrontApi\\WebSite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

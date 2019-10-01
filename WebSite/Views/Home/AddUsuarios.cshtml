@@ -9,11 +9,25 @@
     .validation-summary-errors {
         color: red
     }
+
+    input.error {
+        color: red;
+    }
+
+    .error {
+        color: red;
+    }
 </style>
 
 <h2 class="text-center">Cadastrar Usuários</h2>
 <br />
 <br />
+@if (Model != null && Model.Id > 0)
+{
+    <div class="alert alert-success" role="alert">
+       Usuário Cadastrado
+    </div>
+}
 
 <div class="container">
 
@@ -64,7 +78,7 @@
             </div>
 
             <div class="text-center panel-body">
-                <button type="submit" class="btn btn-lg btn-primary">Criar</button>
+                <button type="submit" class="btn btn-lg btn-primary" id="btn-create">Criar</button>
             </div>
         </form>
     </div>

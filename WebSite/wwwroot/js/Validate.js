@@ -1,4 +1,20 @@
 ﻿$(document).ready(function () {
+    $("#myform").validate({
+    error: function (label) {
+        $(this).addClass("error");
+    }
+  });
+});
+
+/*
+$.validate.addMethod("dateFormat",
+    function (value, element) {
+        return value.match(/^dd?-dd?-dd$/);
+    },"Por favor insira a data em formato dd-mm-yyyy.");
+*/
+
+
+$(document).ready(function () {
     $("#MyForm").validate({
         rules: {
             NomeCompleto: {
@@ -7,17 +23,21 @@
             },
             Senha: {
                 required: true,
-                minLength: 5
+                minLength: 5,
+                maxLength: 8,
+                password:true
             },
             Email: {
                 required: true,
                 email: true
             },
             DataNascimento: {
-                required: true
+                required: true,
+                date: true             
 
             },
         },
+        
         messages: {
 
             NomeCompleto: {
@@ -26,13 +46,15 @@
             },
             Senha: {
                 required: "Por favor insira a senha",
-                minLength: "Senha como no minimo de 5 caracteres"
+                minLength: "Minimo de 5 caracteres na senha",
+                maxLength: "Máximo de 8 caracteres na senha"
             },
             Email: {
                 required: "Insira email valido."
             },
-            DataNascimento: "Insira a Data de Nascimento",
+            DataNascimento: "Insira a Data de Nascimento em Formato dd/mm/aaaa",
             date: true
         }
     });
-}
+});
+

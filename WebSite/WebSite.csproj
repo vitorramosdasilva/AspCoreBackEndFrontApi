@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\tema.cs" />
     <Content Remove="wwwroot\js\checkedBox.js" />
+    <Content Remove="wwwroot\js\jquery.validate.js" />
   </ItemGroup>
 
   <ItemGroup>
